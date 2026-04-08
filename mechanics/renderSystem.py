@@ -20,6 +20,7 @@ from mechanics import mapSystem
 _sky_texture = None
 _ground_texture = None
 _player_icon = None
+_home_bg = None
 font_small = None
 font_medium = None
 font_large = None
@@ -27,12 +28,14 @@ font_large = None
 
 def init():
     """Load rendering assets and create fonts. Call after pygame.init()."""
-    global _sky_texture, _ground_texture, _player_icon
+    global _sky_texture, _ground_texture, _player_icon, _home_bg
     global font_small, font_medium, font_large
 
     _sky_texture = pygame.image.load(resource_path("assets/images/sky.png")).convert_alpha()
     _ground_texture = pygame.image.load(resource_path("assets/images/ground.png")).convert()
     _player_icon = load_image(resource_path("assets/images/player.png"), scale=(32, 32))
+    _home_bg = pygame.image.load(resource_path("assets/images/homeBg.png")).convert()
+    _home_bg = pygame.transform.scale(_home_bg, (WIDTH, HEIGHT))
 
     font_small = pygame.font.SysFont("Arial", 16)
     font_medium = pygame.font.SysFont("Arial", 24)
@@ -469,10 +472,15 @@ def show_round_stats(screen, game_state):
 
 
 def landing_screen(screen):
-    """Show the title/landing screen with a Start button."""
+    """Show the title/landing screen with a Start button and background image."""
+    # Draw background
+    screen.blit(_home_bg, (0, 0))
+    
+    # Semi-transparent overlay for better text visibility
     overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
-    overlay.fill((0, 0, 0, 220))
+    overlay.fill((0, 0, 0, 120))
     screen.blit(overlay, (0, 0))
+    
     title = font_large.render("FPS AND SHIT IN PYTHON", True, YELLOW)
     screen.blit(title, (WIDTH // 2 - title.get_width() // 2, 120))
     subtitle = font_medium.render("by Ishaan Chauhan", True, LIGHTGRAY)
