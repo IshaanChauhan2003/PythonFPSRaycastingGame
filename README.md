@@ -2,6 +2,16 @@
 
 A first-person shooter built with Python and Pygame featuring classic raycasting rendering, multiple weapons, enemy AI, and advanced movement mechanics.
 
+
+<img width="1004" height="743" alt="image" src="https://github.com/user-attachments/assets/4dc8b51b-ecd9-42bd-8a08-502e4ccf7351" />
+
+<img width="994" height="753" alt="image" src="https://github.com/user-attachments/assets/fde509f6-f8c1-4828-91e2-4125c84b8b89" />
+
+<img width="998" height="751" alt="image" src="https://github.com/user-attachments/assets/16b283bf-d7cf-484f-b03e-57636deb8faa" />
+
+<img width="996" height="747" alt="image" src="https://github.com/user-attachments/assets/c2c3f338-7ac9-4db7-bf0c-3d800dbe7470" />
+
+
 ## Table of Contents
 - [Controls](#controls)
 - [Movement Mechanics](#movement-mechanics)
